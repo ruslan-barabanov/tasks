@@ -16,7 +16,7 @@ public class ProjectsPage extends Form {
     private final String listNames = "//a[@class='list-group-item']";
 
     public ProjectsPage(By locator, String name) {
-        super(locator, name);
+        super(By.xpath("//div[contains(@class,'main-container')]"), "Project Page");
     }
 
     public IElement getVersionName() {
@@ -26,9 +26,11 @@ public class ProjectsPage extends Form {
     public List<WebElement> getListProjectNames() {
         return AqualityServices.getBrowser().getDriver().findElements(By.xpath(listNames));
     }
+
     public void getRandomProjectNames(List<WebElement> webElementList) {
         Random ran = new Random();
-        int x = ran.nextInt(6);
+//        int x = ran.nextInt(6);
+        int x = 2;
         int counter = 0;
         for (WebElement element : webElementList) {
             if (counter == x) {
