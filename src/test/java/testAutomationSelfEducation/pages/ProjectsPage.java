@@ -12,20 +12,20 @@ import java.util.Random;
 
 public class ProjectsPage extends Form {
 
+    private final ITextBox versionName = getElementFactory().getTextBox(By.xpath("//p[contains(text(),'Reporting')]/span"), "version Name");
+    private final String listNames = "//a[@class='list-group-item']";
+
     public ProjectsPage(By locator, String name) {
         super(locator, name);
     }
-
-    private final ITextBox versionName = getElementFactory().getTextBox(By.xpath("//p[contains(text(),'Reporting')]/span"), "version Name");
 
     public IElement getVersionName() {
         return versionName;
     }
 
     public List<WebElement> getListProjectNames() {
-        return AqualityServices.getBrowser().getDriver().findElements(By.xpath("//a[@class='list-group-item']"));
+        return AqualityServices.getBrowser().getDriver().findElements(By.xpath(listNames));
     }
-
     public void getRandomProjectNames(List<WebElement> webElementList) {
         Random ran = new Random();
         int x = ran.nextInt(6);

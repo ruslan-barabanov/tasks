@@ -13,15 +13,13 @@ public class FluentApi {
 
     public FluentApi() {
     }
+
     Properties properties = new Properties();
 
     public String sendPostGetToken() throws IOException {
         final Collection<NameValuePair> params = new ArrayList<>();
-
         properties.load(ClassLoader.getSystemResourceAsStream("selfEducation.properties"));
-
         String requestPost = properties.getProperty("requestPost.path");
-
         final Content postResultForm = Request.Post(requestPost)
                 .bodyForm(params, Charset.defaultCharset())
                 .execute().returnContent();

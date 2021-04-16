@@ -11,13 +11,16 @@ import java.util.List;
 
 public class RandomProjectPage extends Form {
 
+    private final String listTime = "//table[@class='table']/tbody/tr/td[6]";
+    private final String bigTimeNameTest = "//table[@class='table']/tbody/tr/td[6][contains(text(),'%s')]/../td[1]/a";
+
     public RandomProjectPage(By locator, String name) {
         super(locator, name);
     }
 
     public List<WebElement> getListProjectNames() {
         return AqualityServices.getBrowser().getDriver().
-                findElements(By.xpath("//table[@class='table']/tbody/tr/td[6]"));
+                findElements(By.xpath(listTime));
     }
 
     public String getTimeText(List<WebElement> webElementList) {
@@ -33,6 +36,7 @@ public class RandomProjectPage extends Form {
     }
 
     public void clickBigTimeTest(String time) {
-        AqualityServices.getBrowser().getDriver().findElement(By.xpath("//table[@class='table']/tbody/tr/td[6][contains(text(),'" + time + "')]/../td[1]/a")).click();
+        String fullLocator = String.format(bigTimeNameTest, time);
+        AqualityServices.getBrowser().getDriver().findElement(By.xpath(fullLocator)).click();
     }
 }
