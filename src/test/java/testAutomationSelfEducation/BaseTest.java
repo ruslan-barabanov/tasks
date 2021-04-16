@@ -25,7 +25,7 @@ public abstract class BaseTest {
         Properties properties = new Properties();
         properties.load(ClassLoader.getSystemResourceAsStream("selfEducation.properties"));
         AqualityServices.getBrowser().goTo(properties.getProperty("default_url.path"));
-        getBrowser().setWindowSize(2000, 768);
+        getBrowser().maximize();
         AqualityServices.getBrowser().getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 

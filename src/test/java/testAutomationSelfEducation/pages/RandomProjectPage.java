@@ -33,6 +33,6 @@ public class RandomProjectPage extends Form {
     }
 
     public void clickBigTimeTest(String time) {
-        AqualityServices.getBrowser().getDriver().findElement(By.xpath("//table[@class='table']/tbody/tr/td[6][contains(text(),'" + time + "')]/../td[1]")).click();
+        AqualityServices.getBrowser().getDriver().findElement(By.xpath("//table[@class='table']/tbody/tr/td[6][contains(text(),'" + time + "')]/../td[1]/a")).click();
     }
 }

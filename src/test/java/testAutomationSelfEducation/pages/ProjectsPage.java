@@ -28,7 +28,7 @@ public class ProjectsPage extends Form {
 
     public void getRandomProjectNames(List<WebElement> webElementList) {
         Random ran = new Random();
-        int x = ran.nextInt(8);
+        int x = ran.nextInt(6);
         int counter = 0;
         for (WebElement element : webElementList) {
             if (counter == x) {
