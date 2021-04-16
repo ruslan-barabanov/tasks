@@ -30,7 +30,6 @@ public class RandomProjectPage extends Form {
         }
         Collections.sort(str);
         Collections.reverse(str);
-        System.out.println(str.get(0));
         String time = str.get(0).toString();
         return time;
     }
