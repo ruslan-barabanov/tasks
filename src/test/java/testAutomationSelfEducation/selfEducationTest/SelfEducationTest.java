@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 import testAutomationSelfEducation.BaseTest;
 import testAutomationSelfEducation.pages.*;
 import testAutomationSelfEducation.util.WorkWithCookie;
+
 import java.io.IOException;
-import java.util.*;
 
 public class SelfEducationTest extends BaseTest {
     protected SelfEducationTest() {
@@ -34,11 +34,8 @@ public class SelfEducationTest extends BaseTest {
         String expectedText = "Version: 4";
         String actualText = projectsPage.getVersionName().getText();
         Assert.assertEquals(expectedText, actualText, "version does not match");
-
-        List<WebElement> webElementList = projectsPage.getListProjectNames();
-        projectsPage.getRandomProjectNames(webElementList);
-        List<WebElement> webElementTime = randomProjectPage.getListProjectNames();
-        String mostLongTime = randomProjectPage.getTimeText(webElementTime);
+        projectsPage.clickRandomProjectNames();
+        String mostLongTime = randomProjectPage.getTimeText();
         randomProjectPage.clickBigTimeTest(mostLongTime);
         String str = testInfoPage.getInfoTimeTest(mostLongTime).getText();
         String actual = str.replace("Duration (H:m:s.S): ", "");

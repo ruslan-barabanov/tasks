@@ -18,12 +18,12 @@ public class RandomProjectPage extends Form {
         super(locator, name);
     }
 
-    public List<WebElement> getListProjectNames() {
-        return AqualityServices.getBrowser().getDriver().
-                findElements(By.xpath(listTime));
+    private List<WebElement> getListProjectNames() {
+        return AqualityServices.getBrowser().getDriver().findElements(By.xpath(listTime));
     }
 
-    public String getTimeText(List<WebElement> webElementList) {
+    public String getTimeText() {
+        List<WebElement> webElementList = getListProjectNames();
         ArrayList str = new ArrayList();
         for (WebElement element : webElementList) {
             str.add(element.getText());

@@ -23,14 +23,14 @@ public class ProjectsPage extends Form {
         return versionName;
     }
 
-    public List<WebElement> getListProjectNames() {
+    private List<WebElement> getListProjectNames() {
         return AqualityServices.getBrowser().getDriver().findElements(By.xpath(listNames));
     }
 
-    public void getRandomProjectNames(List<WebElement> webElementList) {
+    public void clickRandomProjectNames() {
+        List<WebElement> webElementList = getListProjectNames();
         Random ran = new Random();
-//        int x = ran.nextInt(6);
-        int x = 2;
+        int x = ran.nextInt(6);
         int counter = 0;
         for (WebElement element : webElementList) {
             if (counter == x) {
@@ -39,6 +39,5 @@ public class ProjectsPage extends Form {
             }
             counter++;
         }
-        System.out.println(webElementList.get(1));
     }
 }
