@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-
 public abstract class BaseTest {
     protected final IElementFactory elementFactory;
     protected final FluentApi fluentApi = new FluentApi();
