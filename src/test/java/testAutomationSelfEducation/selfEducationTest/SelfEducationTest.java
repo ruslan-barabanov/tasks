@@ -17,7 +17,6 @@ public class SelfEducationTest extends BaseTest {
 
     @Test()
     public void mainSelfAducationTest() throws IOException {
-
         String token = fluentApi.sendPostGetToken();
         System.out.println(token);
         Cookie actualTokenCookie = new Cookie("tokenCookie", token);
@@ -27,7 +26,6 @@ public class SelfEducationTest extends BaseTest {
         getBrowser().getDriver().navigate().refresh();
         String actualText = projectsPage.getVersionName().getText();
         System.out.println(actualText);
-
         List<WebElement> webElementList = projectsPage.getListProjectNames();
         projectsPage.getRandomProjectNames(webElementList);
         List<WebElement> webElementTime = randomProjectPage.getListProjectNames();

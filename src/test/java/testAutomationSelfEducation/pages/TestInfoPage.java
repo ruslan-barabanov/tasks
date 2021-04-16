@@ -11,7 +11,7 @@ public class TestInfoPage extends Form {
         super(locator, name);
     }
 
-    public WebElement getInfoTimeTest(String time){
-       return AqualityServices.getBrowser().getDriver().findElement(By.xpath("//div/p[3][contains(text(),'"+ time +"')]"));
+    public WebElement getInfoTimeTest(String time) {
+        return AqualityServices.getBrowser().getDriver().findElement(By.xpath("//div/p[3][contains(text(),'" + time + "')]"));
     }
 }
